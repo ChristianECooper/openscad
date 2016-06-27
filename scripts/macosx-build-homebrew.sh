@@ -25,7 +25,8 @@ brew tap glehmann/homebrew-extras
 brew update
 brew unlink boost
 for formula in qt5 qscintilla2-qt5 eigen boost cgal glew glib opencsg freetype libxml2 fontconfig harfbuzz; do
-  brew install $formula
+  brew ls --versions $formula || brew install $formula
+  brew outdated $formula || brew upgrade $formula
 done
 brew link --force qt5
 brew link --force qscintilla2-qt5
