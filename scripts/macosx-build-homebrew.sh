@@ -22,6 +22,10 @@ fi
 
 brew tap openscad/tap
 brew tap glehmann/homebrew-extras
+brew unlink boost
 for formula in qt5 qscintilla2-qt5 eigen boost cgal glew glib opencsg freetype libxml2 fontconfig harfbuzz; do
   brew install $formula
 done
+brew link --force qt5
+brew link --force qscintilla2-qt5
+
