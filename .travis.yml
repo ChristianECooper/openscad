@@ -1,6 +1,6 @@
 language: cpp
-os:
-  - osx
+os: osx
+compiler: clang
 sudo: required
  
 notifications:
