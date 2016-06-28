@@ -20,8 +20,8 @@ branches:
 
 before_script:
  - echo -e "Host files.openscad.org\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
- - echo -n $openscad_rsa_{00..40} >> ~/.ssh/openscad_rsa_base64
- - base64 --decode --ignore-garbage ~/.ssh/openscad_rsa_base64 > ~/.ssh/id_rsa
+ - for i in {0..40}; do eval $(printf "echo \$openscad_rsa_%02d\n" $i) >> ~/.ssh/openscad_rsa_base64; done
+ - base64 --decode ~/.ssh/openscad_rsa_base64 > ~/.ssh/id_rsa
  - chmod 600 ~/.ssh/id_rsa
 
 script: if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then ./scripts/travis-ci.sh ; fi
