@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash
 #
 # This script builds  library dependencies of OpenSCAD for Mac OS X using Homebrew.
 # 
