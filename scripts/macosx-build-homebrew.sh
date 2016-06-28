@@ -23,7 +23,7 @@ fi
 brew tap openscad/tap
 brew tap glehmann/homebrew-extras
 brew update
-for formula in qt5 qscintilla2-qt5 eigen boost cgal glew glib opencsg freetype libxml2 fontconfig harfbuzz; do
+for formula in eigen boost cgal glew glib opencsg freetype libxml2 fontconfig harfbuzz qt5 qscintilla2-qt5; do
   brew ls --versions $formula && brew install $formula
   brew outdated $formula || brew upgrade $formula
 done
