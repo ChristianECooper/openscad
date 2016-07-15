@@ -14,10 +14,12 @@ cache: apt
 matrix:
   include:
     - os: linux
+      compiler: gcc
       dist: trusty
       sudo: required
       cache: apt
     - os: osx
+      compiler:clang
 
 notifications:
   irc:
