@@ -69,7 +69,6 @@ void ParameterWidget::setComboBoxForSet(){
         this->comboBox->addItem(QString::fromStdString(v.first),
                       QVariant(QString::fromStdString(v.first)));
     }
-    this->comboBox->setCurrentText("No Set Selected");
     connect(comboBox, SIGNAL(currentIndexChanged(int)),this,SLOT(onSetChanged(int)));
 }
 
