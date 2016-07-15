@@ -19,6 +19,11 @@ fi
 # opencsgtest_text-font-direction-tests - Fails due to old freetype (issue #899)
 # throwntogethertest_issue964 - Fails due to non-planar quad being tessellated slightly different
 # opencsgtest_issue1165 - z buffer tearing
+
+# Fails on Apple's software renderer:
+# opencsgtest_issue1258
+# throwntogethertest_issue1089
+# throwntogethertest_issue1215
 ctest -j8 -E "\
 opencsgtest_rotate_extrude-tests|\
 opencsgtest_render-tests|\
@@ -37,7 +42,10 @@ opencsgtest_text-font-direction-tests|\
 csgpngtest_text-font-direction-tests|\
 throwntogethertest_text-font-direction-tests|\
 throwntogethertest_issue964|\
-opencsgtest_issue1165\
+opencsgtest_issue1165|\
+opencsgtest_issue1258|\
+throwntogethertest_issue1089|\
+throwntogethertest_issue1215\
 "
 if [[ $? != 0 ]]; then
   echo "Test failure"
