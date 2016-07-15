@@ -1,16 +1,5 @@
 language: cpp
 
-os:
- - linux
- - osx
-
-compiler:
- - gcc
- - clang
-
-sudo: required
-cache: apt
-
 matrix:
   include:
     - os: linux
