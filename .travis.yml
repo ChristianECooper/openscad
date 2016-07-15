@@ -19,7 +19,7 @@ matrix:
       sudo: required
       cache: apt
     - os: osx
-      compiler:clang
+      compiler: clang
 
 notifications:
   irc:
